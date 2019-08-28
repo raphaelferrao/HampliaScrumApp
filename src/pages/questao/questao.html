@@ -1,0 +1,95 @@
+<ion-header class="toolbarHamplia" >
+    <ion-navbar>
+        <ion-title *ngIf="assunto" >
+            <div [innerHTML]="assunto.nome_en" *ngIf="idioma == 'EN'" ></div>
+            <div [innerHTML]="assunto.nome_pt" *ngIf="idioma == 'PT'" ></div>    
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding class="cards-bg" > 
+    <ion-item text-left class="toggleIdioma" >
+        <ion-label>
+            <img src="../../assets/imgs/flag_brasil.png" >
+        </ion-label>
+        <ion-checkbox [(ngModel)]="toggleIdioma" (ionChange)="alterarIdioma()" ></ion-checkbox>
+    </ion-item>
+
+    <ion-card class="cardQuestao"  *ngIf="questao" >
+        <ion-card-header>
+            <div class="headerCardQuestao">Questão {{questao.ordem}} de {{quantidadeQuestoes}}</div>
+        </ion-card-header>
+        <ion-card-content>          
+            <div class="enunciado" > 
+                <ion-item>
+                    <div [innerHTML]="questao.texto_en" *ngIf="idioma == 'EN'" ></div>
+                    <div [innerHTML]="questao.texto_pt" *ngIf="idioma == 'PT'" ></div>                
+                </ion-item>
+            </div>
+            <form [formGroup]="opcaoForm">
+                <ion-scroll scrollY="true" scrollbar-y="true" >
+                  <ion-list radio-group class="listaOpcoesQuestao" *ngIf="questao.respostas" formControlName="opcaoEscolhida" >
+                    <ion-item *ngFor="let opcao of questao.respostas" [ngClass]="alterarClass(opcao)"  >
+                        <ion-radio value="{{opcao.letraOpcao}},{{opcao.respostaCerta}}" item-left 
+                                   [disabled]="respondeuQuestao" ></ion-radio>
+                        <ion-label class="opcoesResposta" >
+                            <div [innerHTML]="opcao.letraOpcaoTexto_en" *ngIf="idioma == 'EN'" ></div>
+                            <div [innerHTML]="opcao.letraOpcaoTexto_pt" *ngIf="idioma == 'PT'" ></div>
+                        </ion-label>
+                    </ion-item>
+                  </ion-list>         
+                </ion-scroll>
+            </form>
+        </ion-card-content>     
+    </ion-card>
+
+    <ion-footer class="grid-basic-page" *ngIf="questao" >
+        <ion-row *ngIf="respondeuCerto" class="respostaCerta" >
+            <ion-col text-left>
+                Parabéns, você acertou!
+            </ion-col>
+        </ion-row>
+        <ion-row *ngIf="respondeuErrado" class="respostaErrada" >
+            <ion-col text-left>
+                Xi, você errou!
+            </ion-col>
+        </ion-row>    
+
+        <ion-row>     
+            <ion-col text-left >
+            </ion-col>
+            <!--
+                <button ion-button icon-start small round color="primary" (click)="abrirPaginaQuestao(questao.ordem-1);" 
+                        *ngIf="!ehPrimeiraQuestao()" >
+                    <ion-icon name='arrow-back'></ion-icon>
+                    Anter
+                </button>
+                <button ion-button icon-start small round color="primary" [disabled]="true" 
+                        *ngIf="ehPrimeiraQuestao()" >
+                    <ion-icon name='arrow-back'></ion-icon>
+                    Anter
+                </button>                
+            -->
+            <ion-col text-center >
+                <button ion-button icon-start  color="secondary" (click)="responderQuestao();" 
+                    [disabled]="respondeuQuestao" >
+                    <ion-icon name='checkmark-circle'></ion-icon>
+                    Responder
+                </button>
+            </ion-col>
+ 
+            <ion-col text-right >
+                <button ion-button icon-end  round color="primary" (click)="abrirPaginaQuestao(questao.ordem+1);" 
+                        [disabled]="!respondeuQuestao" *ngIf="!ehUltimaQuestao()" >
+                    Próx
+                    <ion-icon name='arrow-forward'></ion-icon>
+                </button>
+                <button ion-button icon-end round color="primary" (click)="finalizarAula();" 
+                        [disabled]="!respondeuQuestao" *ngIf="ehUltimaQuestao()" >
+                    Próx
+                    <ion-icon name='arrow-forward'></ion-icon>
+                </button> 
+            </ion-col>
+        </ion-row> 
+    </ion-footer>  
+</ion-content>

@@ -1,0 +1,32 @@
+<ion-header class="toolbarHamplia" >
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="card-background-page" >
+  <ion-item text-left class="toggleIdioma" >
+    <ion-label>
+        <img src="../../assets/imgs/flag_brasil.png" >
+    </ion-label>
+    <ion-checkbox [(ngModel)]="toggleIdioma" (ionChange)="alterarIdioma()" ></ion-checkbox>
+  </ion-item>
+
+  <ion-list *ngIf="assuntos" >
+    <ion-card *ngFor="let assunto of assuntos" class="assuntoCard" >
+      <button  ion-item (click)="abrirPaginaQuestoes(assunto)" >
+        <ion-icon name="folder" item-start ></ion-icon>
+        <ion-item *ngIf="idioma == 'EN'" >{{assunto.nome_en}}</ion-item>
+        <ion-item *ngIf="idioma == 'PT'" >{{assunto.nome_pt}}</ion-item>
+      </button>     
+    </ion-card>
+  </ion-list>
+
+  <ion-card class="simuladoCard" >
+    <button  ion-item (click)="abrirPaginaInicioSimulado()" >
+        <ion-icon name="book" item-start ></ion-icon>
+        <ion-item>Simulado</ion-item>
+    </button>
+  </ion-card>
+</ion-content>
+

@@ -1,0 +1,29 @@
+page-conclusao-questao {
+
+    h2 {
+        margin: 10px !important;
+        margin-bottom: 15px !important;
+    }
+
+    .headerCardQuestao {
+        text-align: center;
+        font-size: 1.4rem !important;
+        margin-bottom: 2px;
+        font-weight: bold;
+    }
+
+    .aprovadoPSM {
+        background-color: #8cd7ce !important;
+        padding: 5px;
+        text-align: left;
+        margin-top: 10px;
+    }
+
+    .naoAprovadoPSM {
+        background-color: #ec91a0 !important;
+        padding: 5px;
+        text-align: left;
+        margin-top: 10px;
+    }
+
+}

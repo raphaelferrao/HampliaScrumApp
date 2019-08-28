@@ -1,0 +1,38 @@
+<!--
+  Generated template for the InicioSimuladoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header class="toolbarHamplia" >
+    <ion-navbar>
+        <ion-title >
+           Criar Simulado  
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+    <form novalidate [(formGroup)]="simuladoForm" (submit)="gerarNovoSimulado()" >
+      <ion-list>
+        <ion-item>
+            <ion-label floating>Número de Questões*</ion-label>
+            <ion-input  type="number" name="numeroQuestoes" id="numeroQuestoes" 
+                        formControlName="numeroQuestoes" 
+                        autocomplete="off" maxlength="2" 
+                        min=0 max=99 ></ion-input>
+        </ion-item>
+        <h6 *ngIf="!simuladoForm.get('numeroQuestoes').valid" class="msgValidacao">{{msgValidacaoNumeroQuestoes}}</h6> 
+
+        <div padding>
+            <button ion-button id="btGerarSimulado" block icon-start >
+                <ion-icon name="create"></ion-icon> 
+                Gerar Simulado
+            </button>
+        </div>        
+      </ion-list>
+    </form>
+
+</ion-content>

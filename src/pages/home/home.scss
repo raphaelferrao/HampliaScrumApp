@@ -1,0 +1,29 @@
+page-home {
+
+    .scroll-content {
+        margin-top: 35px !important;
+    }
+
+    ion-label .label {
+        white-space: normal;
+    }
+
+    .assuntoCard, .simuladoCard {
+        ion-icon {
+            margin-right: 0px !important;
+        }
+
+        .item-inner {
+            margin-left: 5px !important;
+        }
+
+        ion-label {
+            margin-top: 0px !important;
+            margin-bottom: 0px !important;
+        }
+    }
+
+    .simuladoCard {
+        margin-top: 20px !important;
+    }
+}

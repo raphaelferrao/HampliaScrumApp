@@ -1,0 +1,42 @@
+page-glossario {
+
+    ion-card-header {
+        font-weight: bold;
+        font-size: 1.7rem !important;
+    }
+
+    .scroll-content {
+        margin-top: 35px !important;
+    }
+
+    .glossarioLetra {
+        font-weight: bold;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        font-size: 1.5rem !important;
+    }
+
+    .glossarioItem {
+        padding-top: 5px;
+        padding-bottom: 5px;
+        text-align: justify;
+        font-size: 1.4rem !important;
+    }
+
+    .glossarioTermo {
+        font-weight: bold;
+        padding-right: 3px;
+    }
+
+    .glossarioTermoDescricao {
+        text-align: justify;
+        display: inline;
+    }
+
+    .glossarioFooter {
+        text-align: right;
+        font-size: 1.3rem !important;
+        margin-top: 15px;
+    }
+
+}

@@ -1,0 +1,49 @@
+<ion-header class="toolbarHamplia" >
+  <ion-navbar>
+      <ion-title>
+        Help   
+      </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="cards-bg" >
+
+  <ion-item text-left class="toggleIdioma" >
+      <ion-label>
+          <img src="../../assets/imgs/flag_brasil.png" >
+      </ion-label>
+      <ion-checkbox [(ngModel)]="toggleIdioma" (ionChange)="alterarIdiomaGlossario()" ></ion-checkbox>
+  </ion-item>  
+
+  <ion-card > 
+    <ion-card-header>
+      Scrum Guide
+    </ion-card-header>
+    <ion-card-content>
+      <a href="https://scrumguides.org/" target="_blank" >https://scrumguides.org/</a>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card > 
+    <ion-card-header>
+      Glossário
+    </ion-card-header>
+
+    <ion-card-content> 
+      <div class="glossarioContent">
+        <div class="glossarioLetra" *ngFor="let letra of glossario.letras" >
+          {{letra.letra}}
+          <div class="glossarioItem" *ngFor="let item of letra.items" >
+            <span class="glossarioTermo" >{{item.termo}}:</span>
+            <p class="glossarioTermoDescricao">{{item.descricao}}</p>
+          </div>
+        </div>
+      </div> 
+
+      <div class="glossarioFooter">
+        Fonte: Scrum Org <br>
+        <a href="https://www.scrum.org/scrum-glossary" target="_blank" >https://www.scrum.org/scrum-glossary</a> 
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

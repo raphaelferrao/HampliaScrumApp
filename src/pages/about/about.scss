@@ -1,0 +1,41 @@
+page-about {
+
+    ion-list * {
+        background-color: $corFundoHamplia !important;
+    }
+
+    ion-list-header {
+        margin-bottom: 0px !important;
+        
+    }
+
+    ion-icon {
+        margin-top: 2px !important;
+        margin-bottom: 2px !important;
+    }
+
+    ion-list-header {
+        min-height: 10px !important;
+
+        ion-label {
+            margin-top: 10px !important;
+            margin-bottom: 2px !important;
+        }
+    }
+
+    ion-item.itemLink {
+        margin-top: 2px !important;
+        margin-bottom: 2px !important;
+        border-bottom: 0px !important;
+
+        ion-label {
+            margin-top: 2px !important;
+            margin-bottom: 2px !important;
+        }
+
+        .item-inner {
+            border-bottom: 0px !important;
+        }
+    }
+
+}

@@ -1,0 +1,41 @@
+<ion-header class="toolbarHamplia" >
+  <ion-navbar [hideBackButton]="true" >
+    <ion-title *ngIf="assunto" >
+        <div [innerHTML]="assunto.nome_en" *ngIf="idioma == 'EN'" ></div>
+        <div [innerHTML]="assunto.nome_pt" *ngIf="idioma == 'PT'" ></div>    
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+    <ion-card>
+        <ion-card-header>
+            <div class="headerCardQuestao">Resultado</div>
+        </ion-card-header>
+        <ion-card-content text-center>
+            <h2>{{msgNumeroAcertosPorNumeroQuestoes}}</h2>
+            <h3 *ngIf="aprovadoPSM" class="aprovadoPSM" [innerHTML]="msgResultadoAprovacaoPSM"></h3>
+            <h3 *ngIf="!aprovadoPSM" class="naoAprovadoPSM" [innerHTML]="msgResultadoAprovacaoPSM"></h3>
+        </ion-card-content>
+    </ion-card>    
+
+    <ion-row>     
+        <ion-col text-center>
+            <button ion-button icon-start full color="secondary" (click)="reiniciar();" >
+                <ion-icon name='refresh'></ion-icon>
+                Reiniciar
+            </button>
+        </ion-col>
+    </ion-row>
+
+    <ion-row>     
+        <ion-col text-center>
+            <button ion-button icon-start full color="primary" (click)="abrirPaginaHome()" >
+                <ion-icon name='home'></ion-icon>
+                Tela Inicial
+            </button>   
+        </ion-col>
+    </ion-row>      
+
+</ion-content>

@@ -1,0 +1,137 @@
+page-questao {
+
+    .cardQuestao {
+        margin: 2px;
+        margin-top: 0px;
+        width: calc(100% - 7px);
+        height: 67vh;
+        max-height: 67vh;
+
+        * {
+            white-space: normal;
+        }
+
+        ion-card-header {
+            padding-bottom: 5px !important;
+        }
+
+        ion-card-content {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        ion-radio {
+            margin-left: 0px !important;
+            margin-right: 9px !important;
+        }
+
+        ion-label {
+            margin-right: 5px !important;
+        }
+    }
+
+    .respostaCerta, .respostaErrada, .respostaAnulada {
+        padding: 6px;
+        padding-top: 3px;
+        padding-bottom: 3px;
+    }
+
+    .respostaCerta {
+        background-color: #56eae3;
+    }
+
+    .respostaErrada {
+        background-color: #fc7753;
+    }
+
+    .respostaAnulada{
+        background-color: #bfb8ad;
+    }    
+
+    .opcaoCorreta {
+        background-color: #8cd7ce !important;
+
+        * {
+            color: black !important;
+            font-weight: bold;
+        }
+    }
+
+    .opcaoErrada {
+        background-color: #ec91a0 !important;
+        * {
+            color: black !important;
+            font-weight: bold;
+        }
+    }
+
+    .item-radio-disabled{
+        *{
+            color: black !important;
+        }
+    }
+
+    ion-content div.scroll-content form > ion-list > ion-item {
+        background-color: white;
+        font-size: 16px;
+    }    
+
+    .enunciado {
+        * {
+            font-size: 1.4rem !important;
+        }
+
+        ion-label {
+            margin-bottom: 10px;
+        }
+    }
+
+    .opcoesResposta {
+        font-size: 1.3rem !important;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    ion-item {
+        margin-left: 2px !important;
+        padding-left: 1px !important;
+    }
+
+    ion-radio {
+        margin-right: 15px !important;
+    }
+
+    .headerCardQuestao {
+        text-align: center;
+        font-size: 1.4rem !important;
+        margin-bottom: 2px;
+        font-weight: bold;
+    }
+
+    .scroll-content {
+        margin-top: 35px !important;
+    }
+
+    ion-scroll {
+        min-height: 100px;
+        height: 48vh;
+        max-height: 48vh;
+        overflow-y: scroll;
+
+        .scroll-content {
+            margin-top: 0px !important;
+            margin-bottom: 0px !important;
+            padding: 0px !important;
+        }
+
+        .scroll-zoom-wrapper {
+            height: 100%;
+        }
+
+        ion-list {
+            height: 100%;
+        }
+
+    }
+
+}
